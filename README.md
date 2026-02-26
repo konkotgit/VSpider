@@ -52,6 +52,8 @@ Incorrect orientation will prevent tape loading from working.
 
 ---
 
-## Board Photo
+## VSpider Photo
 
 ![VSpider](/photos/vspider_06.jpg)
+
+![VSpider Board](/photos/vspider_01.jpg)
