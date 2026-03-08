@@ -30,6 +30,22 @@ A modern reimplementation of the classic **Pentagon** architecture.
 **B.** Pentagon 512 KB + GLUK Service, Z-Controller, TR-DOS virtual 384 KB disk drive
 
 ---
+
+## EPROM contents
+
+| Bank | Address (HEX) | Content |
+|------|---------------|---------|
+| 0 | 00000h – 03FFFh | esxDOS |
+| 1 | 04000h – 07FFFh | esxDOS |
+| 2 | 08000h – 0BFFFh | BASIC 128 |
+| 3 | 0C000h – 0FFFFh | BASIC 48 |
+| 4 | 10000h – 13FFFh | GLUK or FATALL |
+| 5 | 14000h – 17FFFh | TR-DOS |
+| 6 | 18000h – 1BFFFh | BASIC 128 |
+| 7 | 1C000h – 1FFFFh | BASIC 48 |
+
+---
+
 ## Known Fixes & Notes
 
 ### Tape Loading Issue
@@ -49,7 +65,6 @@ Pin numbering when viewed from the left side:
 
 Incorrect orientation will prevent tape loading from working.
 
-
 ---
 
 ## VSpider Photo
@@ -57,3 +72,7 @@ Incorrect orientation will prevent tape loading from working.
 ![VSpider](/photos/vspider_06.jpg)
 
 ![VSpider Board](/photos/vspider_01.jpg)
+
+
+### Look at YouTube:
+[![YouTube link](https://img.youtube.com/vi/_SU3fSY0keU/0.jpg)](https://www.youtube.com/watch?v=_SU3fSY0keU)
