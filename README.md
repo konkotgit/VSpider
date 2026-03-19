@@ -14,7 +14,7 @@ A modern reimplementation of the classic **Pentagon** architecture.
 - **YM2149F TurboSound** sound system with true stereo output
 - **Kempston-compatible** joystick interface
 - Video outputs:
-  - RGB
+  - RGB (Sega Mini-DIN/9 connector) 
   - Composite
   - S-Video
 - EAR/MIC
@@ -28,7 +28,7 @@ A modern reimplementation of the classic **Pentagon** architecture.
 
 **A.** Pentagon 128 KB + DivMMC  
 **B.** Pentagon 512 KB + GLUK Service, Z-Controller, TR-DOS virtual 384 KB disk drive
-
+**C.** Experimental ZX Spectrum +3 with MMC and +3e ROM
 ---
 
 ## EPROM contents
