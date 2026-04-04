@@ -1,41 +1,61 @@
-# VSpider
-## ZX Spectrum Pentagon Clone
+# 🕷️ VSpider  
+### ZX Spectrum Pentagon Clone
 
-A modern reimplementation of the classic **Pentagon** architecture.
+A modern, through-hole friendly reimplementation of the classic **Pentagon** architecture — designed for reliability, expandability, and ease of assembly.
+
 ---
 
-## Hardware Features
+## 📸 Hardware Preview
 
-- ULA implemented using an **Altera CPLD** (EPM3256)
+![VSpider](photos/vspider_06.jpg)  
+![VSpider Board](photos/vspider_01.jpg)
+
+---
+
+## ⚙️ Hardware Features
+
+- ULA implemented using **Altera CPLD (EPM3256)**
 - **512 KB RAM**
 - **128 KB ROM**
-- **DivMMC**
-- **Z-Controller**
-- **YM2149F TurboSound** sound system with true stereo output
+- Built-in **DivMMC**
+- **Z-Controller** support
+- **YM2149F TurboSound** (true stereo output)
 - **Kempston-compatible** joystick interface
-- Video outputs:
-  - RGB (Sega Mini-DIN/9 connector) 
-  - Composite
-  - S-Video
-- EAR/MIC
-- Audio out
-- Power supply input supports **either polarity**
-- PCB fully optimized for **through-hole assembly**
+- **Bluetooth** audio module for game loading
+- **Wifi Ready** 
+
+### 🎥 Video Outputs
+- RGB (Mini-DIN/9, Sega-style)
+- Composite
+- S-Video
+
+### 🔊 Audio & I/O
+- EAR / MIC (tape interface)
+- Line audio output
+
+### 🔌 Power
+- Input supports **either polarity** (protected)
+
+### 🛠️ Build
+- Fully optimized for **through-hole assembly**
+- Ideal for DIY and retro enthusiasts
 
 ---
 
-## Operating Modes
+## 🧠 Operating Modes
 
-**A.** Pentagon 128 KB + DivMMC  
-**B.** Pentagon 512 KB + GLUK Service, Z-Controller, TR-DOS virtual 384 KB disk drive  
-**C.** Experimental ZX Spectrum +3 with MMC and +3e ROM  
+| Mode | Description |
+|:----:|-------------|
+| **A** | Pentagon 128 KB + DivMMC |
+| **B** | Pentagon 512 KB + GLUK Service + Z-Controller + TR-DOS (virtual 384 KB disk) |
+| **C** | Experimental ZX Spectrum +3 with MMC and +3e ROM |
 
 ---
 
-## EPROM contents
+## 💾 EPROM Layout
 
-| Bank | Address (HEX) | Content |
-|------|---------------|---------|
+| Bank | Address Range | Content |
+|:----:|:-------------:|:--------|
 | 0 | 00000h – 03FFFh | esxDOS |
 | 1 | 04000h – 07FFFh | esxDOS |
 | 2 | 08000h – 0BFFFh | BASIC 128 |
@@ -47,33 +67,80 @@ A modern reimplementation of the classic **Pentagon** architecture.
 
 ---
 
-## Known Fixes & Notes
-
-### Tape Loading Issue
-
-If tape loading does not work, check transistor **Q1 (BC517)**.
-
-⚠️ **Important:**  
-BC517 transistors are available with **different pinouts**, depending on the manufacturer.
-
-Pin numbering when viewed from the left side:
-
-- **1. Collector / 2. Base / 3. Emitter**  
-  → Solder exactly as shown on the PCB silkscreen
-
-- **1. Emitter / 2. Base / 3. Collector**  
-  → Solder the transistor rotated **180°**
-
-Incorrect orientation will prevent tape loading from working.
+# 🔧 Jumper & Switch Configuration
 
 ---
 
-## VSpider Photo
+## 🔌 J11 — Video Mode Selection (CSYNC / Composite)
 
-![VSpider](/photos/vspider_06.jpg)
+| Pins | Mode | Usage |
+|:----:|:----:|------|
+| **1–2** | Composite Sync | Use with **Mini-DIN/9 → Composite** cable |
+| **2–3** | RGB Sync (CSYNC) | Use with **Mini-DIN/9 → SCART (Euro RGB)** cable |
 
-![VSpider Board](/photos/vspider_01.jpg)
+👉 **Tip:**  
+- Wrong setting = unstable or no picture  
+- SCART users should almost always use **2–3**
 
+---
 
-### Look at YouTube:
-[![YouTube link](https://img.youtube.com/vi/_SU3fSY0keU/0.jpg)](https://www.youtube.com/watch?v=_SU3fSY0keU)
+## 🎛️ SW3 — Firmware Mode Switch
+
+| Mode | 1 | 2 | 3 |
+|:----:|:-----:|:-----:|:-----:|
+| **A** | Enables / disables **DivMMC** | — | — |
+| **B** | — | — | — | — |
+| **C** | Switch between **+3e / +3 ROM** | — | — |
+
+👉 **Notes:**
+- “—” means the switch position is **ignored**
+- Other switches are reserved for future features
+
+---
+
+## ⚠️ Known Fixes & Notes
+
+### 🎧 Tape Loading Issue (EAR)
+
+If tape loading fails:
+
+- Check transistor **Q1 (BC517)**
+
+#### ⚠️ Critical Detail — Pinout Variants
+
+Different manufacturers use different pin layouts:
+
+**Variant A (standard):**
+```
+1 = Collector  
+2 = Base  
+3 = Emitter
+```
+
+**Variant B (reversed):**
+```
+1 = Emitter  
+2 = Base  
+3 = Collector
+```
+
+👉 **Fix:**  
+- If using Variant B → rotate transistor **180°**
+
+❗ Incorrect orientation = **tape loading will not work**
+
+---
+
+## 🎥 Demo Video
+
+[![YouTube](https://img.youtube.com/vi/_SU3fSY0keU/0.jpg)](https://www.youtube.com/watch?v=_SU3fSY0keU)
+
+---
+
+## 🚀 Notes
+
+- Designed for **retro compatibility + modern convenience**
+- Ideal for:
+  - Demo scene enthusiasts
+  - Hardware hobbyists
+  - ZX Spectrum collectors
