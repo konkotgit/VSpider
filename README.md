@@ -131,6 +131,13 @@ Different manufacturers use different pin layouts:
 
 ---
 
+### 🧠 CPU Compatibility
+
+It is recommended to use a **CMOS-based Z80 CPU**.  
+NMOS variants may work, but compatibility is **not guaranteed**.
+
+---
+
 ## 🎥 Demo Video
 
 [![YouTube](https://img.youtube.com/vi/_SU3fSY0keU/0.jpg)](https://www.youtube.com/watch?v=_SU3fSY0keU)
