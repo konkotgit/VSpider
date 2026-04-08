@@ -22,7 +22,7 @@ A modern, through-hole friendly reimplementation of the classic **Pentagon** arc
 - **YM2149F TurboSound** (true stereo output)
 - **Kempston-compatible** joystick interface
 - **Bluetooth** audio module for game loading
-- **Wifi Ready** 
+- **WiFi Ready**
 
 ### 🎥 Video Outputs
 - RGB (Mini-DIN/9, Sega-style)
@@ -46,9 +46,46 @@ A modern, through-hole friendly reimplementation of the classic **Pentagon** arc
 
 | Mode | Description |
 |:----:|-------------|
-| **A** | Pentagon 128 KB + DivMMC |
-| **B** | Pentagon 512 KB + GLUK Service + Z-Controller + TR-DOS (virtual 384 KB disk) |
-| **C** | Experimental ZX Spectrum +3 with MMC and +3e ROM |
+| 🟦 **A** | Pentagon 128 KB + DivMMC |
+| 🟩 **B** | Pentagon 512 KB + GLUK Service + Z-Controller + TR-DOS (virtual 384 KB disk) |
+| 🟥 **C** | Experimental ZX Spectrum +3 with MMC and +3e ROM |
+
+---
+
+## 🔧 CPLD Firmware Changelog
+
+---
+
+### 🟦 Mode A
+
+- **Rev 1.2**  
+  Added the ability to disable the built-in **TurboSound** for compatibility with external audio interfaces (middle switch).
+
+- **Rev 1.1**  
+  Added **Timex modes**.
+
+- **Rev 1.0**  
+  Initial revision.
+
+---
+
+### 🟩 Mode B
+
+- **Rev 1.1**  
+  Added the ability to disable the built-in **TurboSound** for compatibility with external audio interfaces (middle switch).
+
+- **Rev 1.0**  
+  Initial revision.
+
+---
+
+### 🟥 Mode C
+
+- **Rev 1.1**  
+  Added the ability to disable the built-in **TurboSound** for compatibility with external audio interfaces (middle switch).
+
+- **Rev 1.0**  
+  Initial revision of **ZX Spectrum +3 mode**.
 
 ---
 
@@ -56,8 +93,8 @@ A modern, through-hole friendly reimplementation of the classic **Pentagon** arc
 
 | Bank | Address Range | Content |
 |:----:|:-------------:|:--------|
-| 0 | 00000h – 03FFFh | esxDOS |
-| 1 | 04000h – 07FFFh | esxDOS |
+| 0 | 00000h – 03FFFh | esxDOS 0.8.9 |
+| 1 | 04000h – 07FFFh | esxDOS 0.8.9 |
 | 2 | 08000h – 0BFFFh | BASIC 128 |
 | 3 | 0C000h – 0FFFFh | BASIC 48 |
 | 4 | 10000h – 13FFFh | GLUK or FATALL |
@@ -88,11 +125,12 @@ A modern, through-hole friendly reimplementation of the classic **Pentagon** arc
 
 | Mode | 1 | 2 | 3 |
 |:----:|:-----:|:-----:|:-----:|
-| **A** | Enables / disables **DivMMC** | — | — |
-| **B** | — | — | — | — |
-| **C** | Switch between **+3e / +3 ROM** | — | — |
+| 🟦 **A** | Enables / disables **DivMMC** | TurboSound ON/OFF | — |
+| 🟩 **B** | — | TurboSound ON/OFF | — |
+| 🟥 **C** | Switch between **+3e / +3 ROM** | TurboSound ON/OFF | — |
 
 👉 **Notes:**
+- Switch **2 (middle)** controls **TurboSound enable/disable** in all modes  
 - “—” means the switch position is **ignored**
 - Other switches are reserved for future features
 
