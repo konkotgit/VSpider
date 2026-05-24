@@ -46,18 +46,33 @@ A modern, through-hole friendly reimplementation of the classic **Pentagon** arc
 
 | Mode | Description |
 |:----:|-------------|
-| 🟦 **Universal** | Pentagon 128 KB + DivMMC / GLUK Service + Z-Controller + TR-DOS Ramdisk |
+| 🟦 **A** | Pentagon 128 KB + DivMMC |
+| 🟩 **B** | Pentagon 512 KB + GLUK Service + Z-Controller + TR-DOS (virtual 384 KB disk) |
 | 🟥 **C** | Experimental ZX Spectrum +3 with MMC and +3e ROM |
 
 ---
 
 ## 🔧 CPLD Firmware Changelog
 
-### The CPLD firmware in the universal version was developed by [Andy Karpov](https://github.com/andykarpov). Thank you.
+---
+
+### 🟦 Mode A
+
+- **Rev 1.2**  
+  Added the ability to disable the built-in **TurboSound** for compatibility with external audio interfaces (middle switch).
+
+- **Rev 1.1**  
+  Added **Timex modes**.
+
+- **Rev 1.0**  
+  Initial revision.
 
 ---
 
-### 🟦 Mode Universal
+### 🟩 Mode B
+
+- **Rev 1.1**  
+  Added the ability to disable the built-in **TurboSound** for compatibility with external audio interfaces (middle switch).
 
 - **Rev 1.0**  
   Initial revision.
@@ -74,16 +89,16 @@ A modern, through-hole friendly reimplementation of the classic **Pentagon** arc
 
 ---
 
-## 💾 EPROM Layout (Universal)
+## 💾 EPROM Layout
 
 | Bank | Address Range | Content |
 |:----:|:-------------:|:--------|
-| 0 | 00000h – 03FFFh | GLUK |
-| 1 | 04000h – 07FFFh | TR-DOS |
-| 2 | 08000h – 0BFFFh | BASIC 128-P |
-| 3 | 0C000h – 0FFFFh | BASIC 48-P |
-| 4 | 10000h – 13FFFh | esxDOS 0.8.9 |
-| 5 | 14000h – 17FFFh | DiagROM |
+| 0 | 00000h – 03FFFh | esxDOS 0.8.9 |
+| 1 | 04000h – 07FFFh | esxDOS 0.8.9 |
+| 2 | 08000h – 0BFFFh | BASIC 128 |
+| 3 | 0C000h – 0FFFFh | BASIC 48 |
+| 4 | 10000h – 13FFFh | GLUK or FATALL |
+| 5 | 14000h – 17FFFh | TR-DOS |
 | 6 | 18000h – 1BFFFh | BASIC 128 |
 | 7 | 1C000h – 1FFFFh | BASIC 48 |
 
@@ -110,7 +125,8 @@ A modern, through-hole friendly reimplementation of the classic **Pentagon** arc
 
 | Mode | 1 | 2 | 3 |
 |:----:|:-----:|:-----:|:-----:|
-| 🟦 **Universal** | Switch between **DivMMC / GLUK** | Diagnostic ROM | **DivMMC** ON/OFF |
+| 🟦 **A** | Enables / disables **DivMMC** | TurboSound ON/OFF | — |
+| 🟩 **B** | — | TurboSound ON/OFF | — |
 | 🟥 **C** | Switch between **+3e / +3 ROM** | TurboSound ON/OFF | — |
 
 👉 **Notes:**
